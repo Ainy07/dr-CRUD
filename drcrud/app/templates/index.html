@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="{% static 'indexstyle.css' %}" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="signup-box">
+      <h3 style="text-align: center;">Sign-up</h3>
+      <form method="post" action="/ragistration/">
+        {% csrf_token %}
+        <label>Name</label>
+        <input type="text" placeholder="Enter Name" name="name" required/>
+        <label>Degree</label>
+        <input type="text" placeholder="Enter degree " name="degree" required />
+        <label>Contact </label>
+        <input type="number" maxlength="10" placeholder="Enter your Number"name='contact' required/>
+        <label>Email</label>
+        <input type="email" placeholder="Enter email" name="email" required/>
+        <label>Password</label>
+        <input type="password" placeholder="Entre Password" name="password" required/>
+        <label>Image</label>
+        <input type="file"  name="image"  required/><br><br>
+        <label>Category</label>
+        <select name="category" >
+          <option>Choice option</option>
+          <option value="C">Cardiologists</option>
+          <option value="N">neurologists</option>
+          <option value="S">surgeons</option>
+          <option value="G">gynecologists</option>
+          <option value="E">endocrinologists</option>
+          <option value="D">dentists</option>
+        </select>
+        <br><br>
+        <input type="submit" value="Submit"  />
+    </form>
+      
+    </div>
+    <!-- <p class="para-2">
+      Already have an account? <a href="login.html">Login here</a>
+    </p> -->
+  </body>
+</html>

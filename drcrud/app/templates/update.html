@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <title>Update</title>
+    <link rel="stylesheet" href="{% static 'indexstyle.css' %}" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="signup-box">
+      <h1>update</h1>
+      <form method='post' action='/update_form_data/'>
+        {% csrf_token %}
+        <input type="hidden" name='uid' value="{{D.id}}"/>
+        <label><b>Name</b></label>
+        <input type="text" placeholder="Enter Name" name="name" value="{{D.name}}" required/>
+        <label><b>degree</b></label>
+        <input type="text" placeholder="Enter degree" name="degree" value="{{D.degree}}" required/>
+        <label><b>Contact number</b></label>
+        <input type="number" maxlength="10" placeholder="Enter your Number"name='contact' value="{{D.contact}}" required/>
+        
+        <label><b>Email</b></label>
+        <input type="email" placeholder="Enter email id" name="email" value="{{D.email}}" required />
+        
+        <label><b>image</b></label>
+        <input type="file"  name="image" value="{{D.image}}" required/><br><br>
+        <label>Category</label>
+        <select name="category" >
+          <option>Choice option</option>
+          <option value="C">Cardiologists</option>
+          <option value="N">neurologists</option>
+          <option value="S">surgeons</option>
+          <option value="G">gynecologists</option>
+          <option value="E">endocrinologists</option>
+          <option value="D">dentists</option>
+        </select>
+        <input type="submit" value="Submit"  />
+    </form>
+      <p>
+        By clicking the Sign Up button,you agree to our <br />
+        <a href="#">Terms and Condition</a> and <a href="#">Policy Privacy</a>
+      </p>
+    </div>
+    <p class="para-2">
+      Already have an account? <a href="login.html">Login here</a>
+    </p>
+  </body>
+</html>
