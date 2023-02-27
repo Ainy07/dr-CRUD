@@ -12,7 +12,7 @@
   <body>
     <div class="signup-box">
       <h3 style="text-align: center;">Sign-up</h3>
-      <form method="post" action="/ragistration/">
+      <form method="post" action="/ragistration/" enctype="multipart/form-data">
         {% csrf_token %}
         <label>Name</label>
         <input type="text" placeholder="Enter Name" name="name" required/>
@@ -25,7 +25,7 @@
         <label>Password</label>
         <input type="password" placeholder="Entre Password" name="password" required/>
         <label>Image</label>
-        <input type="file"  name="image"  required/><br><br>
+        <input type="file"  name="image" accept="image/*">
         <label>Category</label>
         <select name="category" >
           <option>Choice option</option>

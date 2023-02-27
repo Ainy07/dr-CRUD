@@ -1,11 +1,11 @@
-from django.urls import path ,re_path
+from django.urls import path, re_path
 from . import views
 from django.conf.urls.static import static
 from django.conf import settings
 urlpatterns = [
-    path('',views.index),
-    path('ragistration/',views.ragistration),
-    path('login/',views.login),
+    path('', views.index),
+    path('ragistration/', views.ragistration),
+    path('login/', views.login),
     path('Login_data/', views.login_form),
     path('table/', views.table),
     path('update_view/<int:uid>/', views.update_view),

@@ -10,13 +10,13 @@ def index(request):
 
 def ragistration(request):
     if request.method == 'POST':
-        name = request.POST['name']
-        degree = request.POST['degree']
-        contact=request.POST['contact']
-        email=request.POST['email']
-        image = request.POST['image']
-        password = make_password(request.POST['password'])
-        category=request.POST['category']
+        name = request.POST.get('name')
+        degree = request.POST.get('degree')
+        contact=request.POST.get('contact')
+        email=request.POST.get('email')
+        image = request.FILES.get('image')
+        password = make_password(request.POST.get('password'))
+        category=request.POST.get('category')
         if Doctor.objects.filter(email=email).exists():
             messages.error(request,'email already exists')
             return redirect("/")

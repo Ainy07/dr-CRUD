@@ -208,13 +208,15 @@ hr {
   <td>{{D.contact}}</td>
   <td>{{D.email}}</td>
   <td>{{D.password}}</td>
-  <td>{{D.image}}</td>
+  <td>
+  <img src="{{D.image.url}}" alt="Italian Trulli">
+  </td>
   <td>{{D.category}}</td>
   <td><div>
     <!-- <button onclick="document.getElementById('id01').style.display='block';document.getElementById('del_id').value='{{person.id}}'">Delete</button> -->
     <a href="{% url 'delete' D.pk %}" type="submit" class="btn btn-danger shadow btn-xs sharp me-1"
 															data-bs-target="#delete" ... onclick="return confirm('Are you sure you want to delete this?') ">
-															<i class="fa fa-trash"></i>
+															<i class="fa fa-trash"></i></a>
 			
     <a href="/update_view/{{D.id}}/" class="btn btn-primary">Edit</a>
     </div>
